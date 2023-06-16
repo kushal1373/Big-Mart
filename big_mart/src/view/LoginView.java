@@ -53,6 +53,7 @@ LoginModel model;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 0));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -116,7 +117,7 @@ LoginModel model;
         roleloginlabel.setText("Select Role");
 
         comborole.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        comborole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Seller", " " }));
+        comborole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Seller" }));
         comborole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboroleActionPerformed(evt);
@@ -180,10 +181,13 @@ LoginModel model;
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(image1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(image1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
@@ -225,9 +229,9 @@ LoginModel model;
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
         // TODO add your handling code here:
 //        LoginController l = new LoginController(this);
-// setVisible(false);
-//         ManageProduct r = new ManageProduct();
-//         r.setVisible(true);
+setVisible(false);
+        ManageProduct r = new ManageProduct();
+        r.setVisible(true);
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnsignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsignupActionPerformed
@@ -253,19 +257,19 @@ LoginModel model;
 
     private void comboroleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboroleActionPerformed
         // TODO add your handling code here:
-        // String st = comborole.getSelectedItem().toString();
-        // if(st.equals("Manager"))
-        // {
-        //     ManageProduct mp = new ManageProduct();
-        //     mp.setVisible(true);
-        //     this.dispose();
-        // }
-        // if (st.equals("Seller"))
-        // {
-        //     newstaff ns = new newstaff();
-        //     ns.setVisible(true);
-        //     this.dispose();
-        // }
+        String st = comborole.getSelectedItem().toString();
+        if(st.equals("Manager"))
+        {
+            ManageProduct mp = new ManageProduct();
+            mp.setVisible(true);
+            this.dispose();
+        }
+        if (st.equals("Seller"))
+        {
+            billingform ns = new billingform();
+            ns.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_comboroleActionPerformed
 public LoginModel getUser()
     {
