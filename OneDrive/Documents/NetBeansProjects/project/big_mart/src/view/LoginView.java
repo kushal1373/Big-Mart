@@ -297,7 +297,7 @@ LoginModel model;
     private void bttnresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttnresetActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        Resetpassword a= new Resetpassword();
+        ForgetPassword a= new ForgetPassword();
         a.setVisible(true);
         
     }//GEN-LAST:event_bttnresetActionPerformed
